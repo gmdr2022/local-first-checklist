@@ -1,0 +1,29 @@
+name: Validation
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: local-first-checklist-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Python validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Compile sources
+        run: python3 -m compileall -q local_first_checklist tests
+
+      - name: Run tests
+        run: python3 -m unittest discover -s tests
