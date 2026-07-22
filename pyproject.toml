@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "local-first-checklist"
+version = "1.0.0"
+description = "Offline-first checklist CLI with atomic local persistence and explicit recovery."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [
+  { name = "Guilherme M. Rocha" },
+]
+keywords = ["cli", "local-first", "offline-first", "data-integrity"]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Environment :: Console",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Utilities",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/gmdr2022/local-first-checklist"
+Issues = "https://github.com/gmdr2022/local-first-checklist/issues"
+Changelog = "https://github.com/gmdr2022/local-first-checklist/blob/main/CHANGELOG.md"
+
+[project.scripts]
+local-first-checklist = "local_first_checklist.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["local_first_checklist*"]
