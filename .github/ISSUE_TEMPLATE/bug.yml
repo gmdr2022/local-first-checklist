@@ -1,0 +1,34 @@
+name: Bug report
+description: Report reproducible behavior that differs from the documented contract.
+title: "bug: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Do not include private checklist contents. Report security concerns through the private vulnerability form.
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      placeholder: local-first-checklist 1.0.0
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: Windows 11, Python 3.13
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Observed behavior and minimal reproduction
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true

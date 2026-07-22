@@ -12,6 +12,8 @@ venv/
 .env.*
 *.log
 tasks.json
+tasks.json.bak
+.local-first-checklist/
 .DS_Store
 Thumbs.db
 desktop.ini
